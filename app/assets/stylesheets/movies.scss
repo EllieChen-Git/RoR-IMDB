@@ -1,0 +1,23 @@
+@import "variables";
+
+body {
+background-color: $light-green;
+}
+
+
+h1, li {
+    color: $dark-green;
+}
+
+h1 {
+    text-align: center;
+}
+
+li {
+    font-size: 20px;
+}
+
+span {
+    font-weight: bold;
+}
+

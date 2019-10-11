@@ -1,1 +1,34 @@
-<%= @movies %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>IMDB</title>
+    </head>
+
+    <body id="home-page">
+        
+        <h1>IMDB</h1>
+
+        <ul>
+            <% @movies.map {|movie| %>
+            <li>
+                <span>Movie Title:</span> <%= movie["title"]%>, 
+                <span>Movie Genre:</span> <%= movie["genre"]%>
+            </li>
+            <% } %>
+        </ul>
+
+        <!--  
+            <ul>
+                <% @movies.map do |movie|%>
+                <li>Movie Title: <%= movie["title"]%>, Genre: <%= movie["genre"]%></li>
+                <% end %>
+            </ul>
+        -->
+
+    </body>
+</html>
+
+

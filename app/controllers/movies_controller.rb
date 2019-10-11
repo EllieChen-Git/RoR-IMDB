@@ -2,9 +2,24 @@ class MoviesController < ApplicationController
     before_action :setup_data
     
     def index
+
+
     end
 
+    def create
 
+    end
+
+    def new
+        @movie_id = @movies[params[:id].to_i]
+        @movies.push(params[:movie])
+        
+        redirect to movie_path(@movies.length - 1)
+    end
+
+    def show
+
+    end
 
 
     private
@@ -19,7 +34,4 @@ class MoviesController < ApplicationController
     
         @movies = session[:movies]
     end
-
-
-
 end
