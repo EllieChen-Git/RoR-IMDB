@@ -14,8 +14,7 @@ Rails.application.routes.draw do
   #SHOW
   get "/movies/:id", to: "movies#show", as: "movie"
 
-  #PUT
-  #PATCH
+  #PUT & PATCH
   put "/movies/:id", to: "movies#update"
   patch "/movies/:id", to: "movies#update"
   

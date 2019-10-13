@@ -2,23 +2,18 @@ class MoviesController < ApplicationController
     before_action :setup_data
     
     def index
-
-
     end
 
-    def create
-
-    end
-
-    def new
-        @movie_id = @movies[params[:id].to_i]
+    def create #actual action of creating new movies & re-directing
         @movies.push(params[:movie])
-        
-        redirect to movie_path(@movies.length - 1)
+        redirect_to movies_path
+    end
+
+    def new   #form to create new movies
     end
 
     def show
-
+        @movie_id = params[:id].to_i
     end
 
 
@@ -26,12 +21,12 @@ class MoviesController < ApplicationController
 
     def setup_data
         session[:movies] = [
-            {title: "Batman", genre: "Action"},
-            {title: "Rat Race", genre: "Drama"},
-            {title: "Shrek", genre: "Thriller"},
-            {title: "Parent Trap", genre: "Horror"},
+            { "title" => "Batman", "genre" =>"Action" },
+            { "title" => "Rat Race", "genre" =>"Drama" },
+            { "title" => "Shrek", "genre" =>"Thriller" },
+            { "title" => "Parent Trap", "genre" =>"Horror" }
         ] unless session[:movies]
-    
+
         @movies = session[:movies]
     end
 end

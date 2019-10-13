@@ -8,26 +8,16 @@
     </head>
 
     <body id="home-page">
-        
         <h1>IMDB</h1>
 
         <ul>
-            <% @movies.map {|movie| %>
-            <li>
-                <span>Movie Title:</span> <%= movie["title"]%>, 
-                <span>Movie Genre:</span> <%= movie["genre"]%>
-            </li>
+            <% @movies.each { |movie| %>
+                <li>
+                    <span>Movie title: </span><%= movie["title"] %>, 
+                    <span>Genre: </span><%= movie["genre"] %>
+                </li>
             <% } %>
         </ul>
-
-        <!--  
-            <ul>
-                <% @movies.map do |movie|%>
-                <li>Movie Title: <%= movie["title"]%>, Genre: <%= movie["genre"]%></li>
-                <% end %>
-            </ul>
-        -->
-
     </body>
 </html>
 
